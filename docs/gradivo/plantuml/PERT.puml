@@ -1,0 +1,81 @@
+@startuml
+skinparam backgroundColor transparent
+left to right direction
+
+scale 0.8
+
+<style>
+stateDiagram {
+  arrow {
+    LineColor black
+  }
+}
+</style>
+
+skinparam State {
+  BackgroundColor #e8f5fd
+  BorderColor #5FB8EC
+}
+
+skinparam defaultTextAlignment center
+
+state "<color:darkred>A1_PZN</color>" as A1 #ffe6e6;line:darkred : <#ffe6e6,#ffe6e6>|   6 | 0 | 6 |\n|   0 | 0 | 6 |
+state "<color:darkred>A2_OSN</color>" as A2 #ffe6e6;line:darkred : <#ffe6e6,#ffe6e6>|   3 |  6 |  9 |\n|   0 |  6 |  9 |
+state "<color:darkred>A3_NS</color>" as A3 #ffe6e6;line:darkred : <#ffe6e6,#ffe6e6>|   8 |  9 | 17 |\n|   0 |  9 | 17 |
+state "A4_OUV" as A4 : <#e8f5fd,#e8f5fd>|   4 | 17 | 21 |\n|   1 | 18 | 22 |
+state "<color:darkred>A5_NA</color>" as A5 #ffe6e6;line:darkred : <#ffe6e6,#ffe6e6>|   5 | 17 | 22 |\n|   0 | 17 | 22 |
+state "<color:darkred>A6_IPM</color>" as A6 #ffe6e6;line:darkred : <#ffe6e6,#ffe6e6>|   4 | 22 | 26 |\n|   0 | 22 | 26 |
+state "A7_INT" as A7 : <#e8f5fd,#e8f5fd>|   3 | 26 | 29 |\n|   4 | 30 | 33 |
+state "A8_IFK" as A8 : <#e8f5fd,#e8f5fd>| 11 | 21 | 32 |\n|   1 | 22 | 33 |
+state "<color:darkred>A9_IPB</color>" as A9 #ffe6e6;line:darkred : <#ffe6e6,#ffe6e6>| 11 | 26 | 37 |\n|   0 | 26 | 37 |
+state "A10_IAPI" as A10 : <#e8f5fd,#e8f5fd>|   5 | 26 | 31 |\n|   6 | 32 | 37 |
+state "A11_IBK" as A11 : <#e8f5fd,#e8f5fd>| 13 | 17 | 30 |\n|   7 | 24 | 37 |
+state "A12_NVV" as A12 : <#e8f5fd,#e8f5fd>|   4 | 32 | 36 |\n|   4 | 36 | 40 |
+state "<color:darkred>A13_PD</color>" as A13 #ffe6e6;line:darkred : <#ffe6e6,#ffe6e6>|   3 | 37 | 40 |\n|   0 | 37 | 40 |
+state "A14_TF" as A14 : <#e8f5fd,#e8f5fd>|   7 | 32 | 39 |\n|   1 | 33 | 40 |
+state "A15_TB" as A15 : <#e8f5fd,#e8f5fd>|   3 | 37 | 40 |\n|   0 | 37 | 40 |
+state "<color:darkred>A16_PPR</color>" as A16 #ffe6e6;line:darkred : <#ffe6e6,#ffe6e6>|   2 | 40 | 42 |\n|   0 | 40 | 42 |
+state "A17_VP" as A17 : <#e8f5fd,#e8f5fd>| 42 |  0 | 42 |\n|   0 |  0 | 42 |
+state "A18_SE" as A18 : <#e8f5fd,#e8f5fd>| 42 |  0 | 42 |\n|   0 |  0 | 42 |
+state "A19_KN" as A19 : <#e8f5fd,#e8f5fd>| 42 |  0 | 42 |\n|   0 |  0 | 42 |
+state "A20_DP" as A20 : <#e8f5fd,#e8f5fd>| 42 |  0 | 42 |\n|   0 |  0 | 42 |
+
+
+[*] -[#darkred,bold]-> A1
+A1 -[#darkred,bold]-> A2
+A2 -[#darkred,bold]-> A3
+A3 --> A4
+A3 -[#darkred,bold]-> A5
+A5 -[#darkred,bold]-> A6
+A4 --> A7
+A6 --> A7
+A4 --> A8
+A6 -[#darkred,bold]-> A9
+A6 --> A10
+A5 --> A11
+A8 --> A12
+A8 --> A13
+A9 -[#darkred,bold]-> A13
+A10 --> A13
+A11 --> A13
+A7 --> A14
+A8 --> A14
+A7 --> A15
+A9 --> A15
+A10 --> A15
+A11 --> A15
+A12 -> A16
+A14 --> A16
+A13 -[#darkred,bold]-> A16
+A15 --> A16
+A16 -[#darkred,bold]-> [*]
+[*] --> A17
+A17 --> [*]
+[*] --> A18
+A18 --> [*]
+[*] --> A19
+A19 --> [*]
+[*] --> A20
+A20 --> [*]
+
+@enduml

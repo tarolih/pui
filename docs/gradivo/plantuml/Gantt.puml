@@ -1,0 +1,84 @@
+@startuml
+skinparam backgroundColor transparent
+
+<style>
+ganttDiagram {
+  timeline {
+    LineColor #f2f2f2
+    FontColor gray
+  }
+  task {
+    BackgroundColor #e8f5fd
+    LineColor #5FB8EC
+  }
+  arrow {
+    LineColor #5FB8EC
+  }
+  milestone {
+    BackgroundColor #e8f5fd
+    LineColor #5FB8EC
+  }
+  closed {
+    BackgroundColor #f2f2f2
+    FontColor lightgray
+  }
+}
+</style>
+
+project starts the 21th of March 2022
+saturdays are closed
+sundays are closed
+2022/04/18 is closed
+2022/04/27 is closed
+2022/05/02 is closed
+
+[**A1_PZN** (6 dni)] as [A1_PZN] lasts 6 days
+
+[**A2_OSN** (3dni)] as [A2_OSN] lasts 3 days and starts at [A1_PZN]'s end
+
+[**M1** / A1_PZN & A2_OSN] as [M1] happens at [A1_PZN]'s end
+[**M1** / A1_PZN & A2_OSN] as [M1] happens at [A2_OSN]'s end
+
+[**A3_NS** (8 dni)] as [A3_NS] lasts 8 days and starts at [A2_OSN]'s end
+
+[**A4_OUV** (4 dni)] as [A4_OUV] lasts 4 days and starts at [A3_NS]'s end
+[**A5_NA** (5 dni)] as [A5_NA] lasts 5 days and starts at [A3_NS]'s end
+
+[**A6_IPM** (4 dni)] as [A6_IPM] lasts 4 days and starts at [A5_NA]'s end
+
+[**A7_INT** (3 dni)] as [A7_INT] lasts 3 days and starts at [A6_IPM]'s end
+[A7_INT] starts at [A4_OUV]'s end
+
+[**A8_IFK** (11 dni)] as [A8_IFK] lasts 11 days and starts at [A4_OUV]'s end
+
+[**A9_IPB** (11 dni)] as [A9_IPB] lasts 11 days and starts at [A6_IPM]'s end
+
+[**A10_IAPI** (5 dni)] as [A10_IAPI] lasts 5 days and starts at [A6_IPM]'s end
+
+[**A11_IBK** (13 dni)] as [A11_IBK] lasts 13 days and starts at [A5_NA]'s end
+
+[**A12_NVV** (4 dni)] as [A12_NVV] lasts 4 days and starts at [A8_IFK]'s end
+[**A13_PD** (3 dni)] as [A13_PD] lasts 3 days and starts at [A8_IFK]'s end
+[A13_PD] starts at [A9_IPB]'s end
+[A13_PD] starts at [A10_IAPI]'s end
+[A13_PD] starts at [A11_IBK]'s end
+[**A14_TF** (7 dni)] as [A14_TF] lasts 7 days and starts at [A7_INT]'s end
+[A14_TF] starts at [A8_IFK]'s end
+
+
+[**A15_TB** (3 dni)] as [A15_TB] lasts 3 days and starts at [A7_INT]'s end
+[A15_TB] starts at [A9_IPB]'s end
+[A15_TB] starts at [A10_IAPI]'s end
+[A15_TB] starts at [A11_IBK]'s end
+
+
+[**A16_PPR** (2 dni)] as [A16_PPR] lasts 2 days and starts at [A12_NVV]'s end
+[A16_PPR] starts at [A14_TF]'s end
+[A16_PPR] starts at [A13_PD]'s end
+[A16_PPR] starts at [A15_TB]'s end
+
+[**A17_VP** (42 dni)] as [A17_VP] lasts 42 days 
+[**A18_SE** (42 dni)] as [A18_SE] lasts 42 days 
+[**A19_KN** (42 dni)] as [A19_KN] lasts 42 days 
+[**A20_DP** (42 dni)] as [A20_DP] lasts 42 days
+@enduml
